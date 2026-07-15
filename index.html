@@ -160,6 +160,24 @@
   .step h3 { font-size: 19px; color: var(--ink); margin-bottom: 8px; text-transform: none; }
   .step p { font-size: 14px; color: var(--muted); }
 
+  /* ===== EXTRAS ===== */
+  .extras { padding: 90px 32px; background: var(--paper); }
+  .extras .section-head p { color: var(--muted); font-size: 16px; margin-top: 10px; }
+  .extras-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  }
+  @media (max-width: 860px) { .extras-grid { grid-template-columns: repeat(2, 1fr); } }
+  .extra-item {
+    background: var(--paper-dim);
+    border: 1px solid rgba(27,27,24,0.1);
+    padding: 26px 18px;
+    text-align: center;
+  }
+  .extra-item .mono { display: block; font-size: 11px; color: var(--tan); margin-bottom: 10px; }
+  .extra-item h3 { font-size: 17px; color: var(--ink); text-transform: none; }
+  .extra-item .save { display: block; font-size: 12px; color: var(--bamboo); margin-top: 8px; font-weight: 600; }
+  .extras-note { margin-top: 26px; font-size: 14px; color: var(--muted); }
+
   /* ===== AREA / CONTACT ===== */
   .contact { padding: 110px 32px; background: var(--ink); color: var(--paper); text-align: center; }
   .contact .eyebrow { justify-content: center; color: var(--bamboo-light); }
@@ -226,7 +244,7 @@
     </g>
   </svg>
   <div class="hero-inner">
-    <div class="eyebrow">Taber & area, Alberta</div>
+    <div class="eyebrow">Lethbridge & area, Alberta</div>
     <h1>Bends without<br>breaking. <span class="accent">Sealed</span><br>to last.</h1>
     <p class="hero-sub">Seal coating, crack filling, line striping, and full driveway or parking lot service — built for prairie freeze-thaw, not just summer weather.</p>
     <svg class="hero-line" viewBox="0 0 460 10" xmlns="http://www.w3.org/2000/svg">
@@ -316,6 +334,44 @@
   </div>
 </section>
 
+<section class="extras">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Add-ons</div>
+      <h2>Extra services on request</h2>
+      <p>Ask about adding any of these to your job — no pressure, just an option. Book any add-on together with a sealcoat job and save 15%.</p>
+    </div>
+    <div class="extras-grid">
+      <div class="extra-item">
+        <span class="mono">Add-on</span>
+        <h3>Snow removal</h3>
+        <span class="save">Save 15% bundled</span>
+      </div>
+      <div class="extra-item">
+        <span class="mono">Add-on</span>
+        <h3>Window cleaning</h3>
+        <span class="save">Save 15% bundled</span>
+      </div>
+      <div class="extra-item">
+        <span class="mono">Add-on</span>
+        <h3>Lawn cutting</h3>
+        <span class="save">Save 15% bundled</span>
+      </div>
+      <div class="extra-item">
+        <span class="mono">Add-on</span>
+        <h3>Car cleaning</h3>
+        <span class="save">Save 15% bundled</span>
+      </div>
+      <div class="extra-item">
+        <span class="mono">Add-on</span>
+        <h3>Junk removal</h3>
+        <span class="save">Save 15% bundled</span>
+      </div>
+    </div>
+    <p class="extras-note">Mention what you need when you request your quote and we'll price it in.</p>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="eyebrow">Get in touch</div>
   <h2>Get a free quote on your driveway or lot</h2>
@@ -324,11 +380,11 @@
   <div class="contact-details">
     <div class="cd-item">
       <div class="cd-label mono">Phone</div>
-      <div class="cd-value">[(587)-257-9362]</div>
+      <div class="cd-value">[ (587)-257-9362 ]</div>
     </div>
     <div class="cd-item">
       <div class="cd-label mono">Email</div>
-      <div class="cd-value">[bambooblacktop@gmail.com]</div>
+      <div class="cd-value">[ bambooblacktop@gmail.com ]</div>
     </div>
     <div class="cd-item">
       <div class="cd-label mono">Service area</div>
