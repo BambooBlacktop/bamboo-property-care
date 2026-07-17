@@ -57,9 +57,10 @@
   nav a { font-size: 14px; font-weight: 500; color: var(--muted); }
   nav a:hover { color: var(--bamboo); }
   .nav-cta {
-    background: var(--ink); color: var(--paper);
-    padding: 10px 20px; border-radius: 2px;
-    font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    background: var(--line-yellow); color: var(--ink);
+    padding: 11px 22px; border-radius: 3px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    box-shadow: 0 4px 14px rgba(223,168,58,0.3);
   }
   .nav-links { display: flex; align-items: center; gap: 32px; }
   @media (max-width: 720px) { nav ul { display: none; } }
@@ -100,12 +101,18 @@
   .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn-primary {
     background: var(--line-yellow); color: var(--ink);
-    padding: 15px 30px; font-weight: 600; font-size: 14px;
-    text-transform: uppercase; letter-spacing: 0.04em;
-    border-radius: 2px; display: inline-block;
-    transition: transform 0.15s ease;
+    padding: 19px 40px; font-weight: 700; font-size: 15px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border-radius: 3px; display: inline-block;
+    box-shadow: 0 8px 24px rgba(223,168,58,0.35);
+    border: 2px solid var(--line-yellow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(223,168,58,0.45);
+    background: #EAB94A;
+  }
   .btn-ghost {
     border: 1px solid rgba(246,244,236,0.35); color: var(--paper);
     padding: 15px 30px; font-weight: 600; font-size: 14px;
@@ -191,6 +198,44 @@
   .extra-item .save { display: block; font-size: 12px; color: var(--bamboo); margin-top: 8px; font-weight: 600; }
   .extras-note { margin-top: 26px; font-size: 14px; color: var(--muted); }
 
+  .gallery { padding: 100px 32px; background: var(--paper-dim); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr; } }
+  .gallery-pair { background: var(--paper); border: 1px solid rgba(27,27,24,0.1); }
+  .ba-row { display: grid; grid-template-columns: 1fr 1fr; }
+  .ba-slot {
+    aspect-ratio: 1 / 1;
+    background: repeating-linear-gradient(45deg, rgba(27,27,24,0.06), rgba(27,27,24,0.06) 10px, transparent 10px, transparent 20px);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .ba-slot::before {
+    content: attr(data-label);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); background: var(--paper);
+    padding: 5px 10px; border: 1px dashed rgba(27,27,24,0.3);
+  }
+  .gallery-caption { padding: 16px 18px; font-size: 14px; color: var(--muted); }
+  .gallery-note { margin-top: 28px; font-size: 14px; color: var(--muted); }
+
+  .reviews { padding: 100px 32px; background: var(--paper); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 860px) { .reviews-grid { grid-template-columns: 1fr; } }
+  .review-card {
+    background: var(--paper-dim); border: 1px solid rgba(27,27,24,0.1);
+    padding: 32px 28px;
+  }
+  .review-stars { color: var(--line-yellow); font-size: 16px; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-quote { font-size: 15px; color: var(--ink); margin-bottom: 18px; }
+  .review-name { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .reviews-note { margin-top: 28px; font-size: 14px; color: var(--muted); }
+
+  .mid-cta {
+    background: var(--bamboo); padding: 56px 32px; text-align: center;
+  }
+  .mid-cta h3 { color: var(--paper); font-size: clamp(24px, 4vw, 34px); margin-bottom: 22px; }
+
   footer {
     background: var(--ink); color: rgba(246,244,236,0.5);
     padding: 24px 32px; text-align: center; font-size: 13px;
@@ -207,6 +252,8 @@
       <nav>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#contact">Area</a></li>
         </ul>
@@ -303,6 +350,66 @@
   </div>
 </section>
 
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Real jobs</div>
+      <h2>Before & after</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-pair">
+        <div class="ba-row">
+          <div class="ba-slot" data-label="Before photo"></div>
+          <div class="ba-slot" data-label="After photo"></div>
+        </div>
+        <div class="gallery-caption">Residential driveway — Taber, AB</div>
+      </div>
+      <div class="gallery-pair">
+        <div class="ba-row">
+          <div class="ba-slot" data-label="Before photo"></div>
+          <div class="ba-slot" data-label="After photo"></div>
+        </div>
+        <div class="gallery-caption">Commercial parking lot</div>
+      </div>
+      <div class="gallery-pair">
+        <div class="ba-row">
+          <div class="ba-slot" data-label="Before photo"></div>
+          <div class="ba-slot" data-label="After photo"></div>
+        </div>
+        <div class="gallery-caption">Cracked driveway repair</div>
+      </div>
+    </div>
+    <p class="gallery-note">These are placeholders — swap in your own before/after photos once you've got job pics.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Word of mouth</div>
+      <h2>What customers say</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Placeholder review text goes here — swap in a real customer quote."</p>
+        <div class="review-name">— Customer name</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Placeholder review text goes here — swap in a real customer quote."</p>
+        <div class="review-name">— Customer name</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Placeholder review text goes here — swap in a real customer quote."</p>
+        <div class="review-name">— Customer name</div>
+      </div>
+    </div>
+    <p class="reviews-note">These are placeholders — swap in real customer reviews once you've got them.</p>
+  </div>
+</section>
+
 <section class="process" id="process">
   <div class="wrap">
     <div class="section-head">
@@ -327,6 +434,11 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="mid-cta">
+  <h3>Ready to protect your driveway or lot?</h3>
+  <a href="#contact" class="btn-primary">Request a free quote</a>
 </section>
 
 <section class="extras" id="extras">
