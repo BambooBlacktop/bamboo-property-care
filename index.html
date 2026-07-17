@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bamboo Blacktop | Seal Coating & Pavement Care</title>
+<title>Leave a Review | Bamboo Blacktop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,213 +18,137 @@
     --tan: #B99B62;
     --line-yellow: #DFA83A;
     --muted: #6B675C;
+    --error: #B23A3A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', sans-serif;
     background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
-    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-  h1, h2, h3, .display {
+  h1, .display {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     line-height: 1;
   }
-  .mono {
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.05em;
-  }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-  a { color: inherit; text-decoration: none; }
+  a { color: inherit; }
 
   header {
-    position: sticky; top: 0; z-index: 50;
     background: var(--paper);
     border-bottom: 1px solid rgba(27,27,24,0.1);
+    padding: 18px 32px;
   }
-  .nav-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 32px; max-width: 1100px; margin: 0 auto;
-  }
-  .logo { font-size: 22px; display: flex; align-items: baseline; gap: 8px; }
+  .nav-inner { max-width: 700px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-size: 22px; text-decoration: none; }
   .logo span.dot { color: var(--bamboo); }
-  nav ul { list-style: none; display: flex; gap: 32px; }
-  nav a { font-size: 14px; font-weight: 500; color: var(--muted); }
-  nav a:hover { color: var(--bamboo); }
-  .nav-cta {
-    background: var(--line-yellow); color: var(--ink);
-    padding: 11px 22px; border-radius: 3px;
-    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-    box-shadow: 0 4px 14px rgba(223,168,58,0.3);
-  }
-  .nav-links { display: flex; align-items: center; gap: 32px; }
-  @media (max-width: 720px) { nav ul { display: none; } }
+  .back-link { font-size: 14px; color: var(--muted); text-decoration: none; }
+  .back-link:hover { color: var(--bamboo); }
 
-  .hero {
-    position: relative;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 100px 32px 90px;
-    overflow: hidden;
-  }
-  .hero-inner {
-    max-width: 1100px; margin: 0 auto;
-    position: relative; z-index: 2;
-  }
+  main { flex: 1; padding: 60px 24px; }
+  .form-wrap { max-width: 560px; margin: 0 auto; }
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    color: var(--bamboo-light);
+    color: var(--bamboo);
     font-size: 13px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 14px;
   }
-  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--bamboo-light); }
-  .hero h1 {
-    font-size: clamp(48px, 8vw, 96px);
-    color: var(--paper);
+  h1 { font-size: clamp(30px, 6vw, 44px); margin-bottom: 12px; }
+  .subtext { color: var(--muted); font-size: 16px; margin-bottom: 40px; }
+
+  form { display: flex; flex-direction: column; gap: 22px; }
+  label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    margin-bottom: 8px;
   }
-  .hero h1 .accent { color: var(--bamboo-light); }
-  .hero-sub {
-    font-size: 19px; color: rgba(246,244,236,0.72);
-    max-width: 480px; margin-top: 24px; font-weight: 400;
+  .optional-tag { color: var(--muted); text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; }
+  input[type="text"], textarea {
+    width: 100%;
+    background: var(--paper-dim);
+    border: 1px solid rgba(27,27,24,0.15);
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    border-radius: 3px;
   }
-  .hero-line {
-    width: 100%; max-width: 460px; height: 10px; margin: 32px 0 40px;
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--bamboo);
   }
-  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  textarea { resize: vertical; min-height: 120px; }
+
+  .star-picker { display: flex; gap: 6px; }
+  .star-picker button {
+    background: none; border: none; cursor: pointer;
+    font-size: 34px; line-height: 1; padding: 0;
+    color: rgba(27,27,24,0.2);
+    transition: color 0.1s ease, transform 0.1s ease;
+  }
+  .star-picker button:hover { transform: scale(1.1); }
+  .star-picker button.active { color: var(--line-yellow); }
+
+  .field-error {
+    color: var(--error);
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+  }
+  .field-error.show { display: block; }
+
   .btn-primary {
     background: var(--line-yellow); color: var(--ink);
-    padding: 19px 40px; font-weight: 700; font-size: 15px;
+    padding: 18px 32px; font-weight: 700; font-size: 15px;
     text-transform: uppercase; letter-spacing: 0.05em;
-    border-radius: 3px; display: inline-block;
+    border-radius: 3px; border: 2px solid var(--line-yellow);
     box-shadow: 0 8px 24px rgba(223,168,58,0.35);
-    border: 2px solid var(--line-yellow);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(223,168,58,0.45);
-    background: #EAB94A;
-  }
-  .btn-ghost {
-    border: 1px solid rgba(246,244,236,0.35); color: var(--paper);
-    padding: 15px 30px; font-weight: 600; font-size: 14px;
-    text-transform: uppercase; letter-spacing: 0.04em;
-    border-radius: 2px; display: inline-block;
-  }
-  .stalks {
-    position: absolute; top: 0; right: 0; height: 100%; width: 42%;
-    opacity: 0.55; z-index: 1;
-  }
-  @media (max-width: 720px) { .stalks { width: 60%; opacity: 0.35; } }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(223,168,58,0.45); }
+  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-  .services { padding: 100px 32px; background: var(--paper); }
-  .section-head { max-width: 620px; margin-bottom: 56px; }
-  .section-head .eyebrow { color: var(--bamboo); }
-  .section-head .eyebrow::before { background: var(--bamboo); }
-  .section-head h2 { font-size: clamp(32px, 5vw, 48px); color: var(--ink); }
-  .service-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
-    background: rgba(27,27,24,0.12);
-    border: 1px solid rgba(27,27,24,0.12);
+  .form-message {
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 3px;
+    display: none;
   }
-  @media (max-width: 720px) { .service-grid { grid-template-columns: 1fr; } }
-  .service-card {
-    background: var(--paper); padding: 40px 36px;
-  }
-  .service-num { font-family: 'JetBrains Mono', monospace; color: var(--tan); font-size: 13px; margin-bottom: 18px; }
-  .service-card h3 { font-size: 26px; color: var(--ink); margin-bottom: 10px; text-transform: none; }
-  .service-card p { color: var(--muted); font-size: 15px; }
-  .service-card.teaser {
-    background: var(--bamboo-pale);
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .service-card.teaser h3 { color: var(--bamboo); }
-  .service-card.teaser a { color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+  .form-message.error { display: block; background: rgba(178,58,58,0.1); color: var(--error); }
 
-  .why { background: var(--bamboo); color: var(--bamboo-pale); padding: 100px 32px; }
-  .why-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-  @media (max-width: 860px) { .why-inner { grid-template-columns: 1fr; } }
-  .why h2 { font-size: clamp(30px, 5vw, 44px); color: var(--paper); margin-bottom: 22px; }
-  .why p { font-size: 17px; opacity: 0.88; max-width: 480px; }
-  .why-stats { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(246,244,236,0.25); }
-  .why-stat { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 0; border-bottom: 1px solid rgba(246,244,236,0.25); }
-  .why-stat .num { font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; color: var(--paper); }
-  .why-stat .lbl { font-size: 14px; color: var(--bamboo-pale); opacity: 0.8; text-align: right; max-width: 200px; }
-
-  .process { padding: 100px 32px; background: var(--paper-dim); }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  @media (max-width: 860px) { .steps { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 500px) { .steps { grid-template-columns: 1fr; } }
-  .step { position: relative; padding-top: 20px; }
-  .step-num { font-family: 'Big Shoulders Display', sans-serif; font-size: 44px; color: var(--tan); display: block; margin-bottom: 12px; }
-  .step h3 { font-size: 19px; color: var(--ink); margin-bottom: 8px; text-transform: none; }
-  .step p { font-size: 14px; color: var(--muted); }
-
-  .contact { padding: 110px 32px; background: var(--ink); color: var(--paper); text-align: center; }
-  .contact .eyebrow { justify-content: center; color: var(--bamboo-light); }
-  .contact .eyebrow::before { display: none; }
-  .contact h2 { font-size: clamp(34px, 6vw, 56px); color: var(--paper); max-width: 720px; margin: 18px auto 20px; }
-  .contact p.sub { color: rgba(246,244,236,0.7); max-width: 480px; margin: 0 auto 36px; }
-  .contact-details {
-    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 48px;
-    border-top: 1px solid rgba(246,244,236,0.18); padding-top: 40px;
-  }
-  .cd-item { text-align: left; }
-  .cd-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--bamboo-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .cd-value { font-size: 17px; }
-
-  .extras { padding: 90px 32px; background: var(--paper); }
-  .extras .section-head p { color: var(--muted); font-size: 16px; margin-top: 10px; }
-  .extras-grid {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
-  }
-  @media (max-width: 860px) { .extras-grid { grid-template-columns: repeat(2, 1fr); } }
-  .extra-item {
-    background: var(--paper-dim);
-    border: 1px solid rgba(27,27,24,0.1);
-    padding: 26px 18px;
+  .thank-you {
+    display: none;
     text-align: center;
+    background: var(--bamboo-pale);
+    border: 1px solid rgba(51,85,61,0.2);
+    padding: 48px 36px;
   }
-  .extra-item .mono { display: block; font-size: 11px; color: var(--tan); margin-bottom: 10px; }
-  .extra-item h3 { font-size: 17px; color: var(--ink); text-transform: none; }
-  .extra-item .save { display: block; font-size: 12px; color: var(--bamboo); margin-top: 8px; font-weight: 600; }
-  .extras-note { margin-top: 26px; font-size: 14px; color: var(--muted); }
-
-  .reviews { padding: 100px 32px; background: var(--paper); }
-  .review-invite {
-    max-width: 560px; margin: 0 auto 48px; text-align: center;
-    background: var(--paper-dim); border: 1px solid rgba(27,27,24,0.1);
-    padding: 40px 36px;
+  .thank-you.show { display: block; }
+  .thank-you h2 { font-family: 'Big Shoulders Display', sans-serif; text-transform: uppercase; color: var(--bamboo); font-size: 28px; margin-bottom: 14px; }
+  .thank-you p { color: var(--muted); margin-bottom: 24px; }
+  .thank-you a {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--ink);
+    font-weight: 600;
   }
-  .review-invite p { color: var(--muted); font-size: 16px; margin-bottom: 26px; }
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 860px) { .reviews-grid { grid-template-columns: 1fr; } }
-  .review-card {
-    background: var(--paper-dim); border: 1px solid rgba(27,27,24,0.1);
-    padding: 32px 28px;
-  }
-  .review-stars { color: var(--line-yellow); font-size: 16px; letter-spacing: 2px; margin-bottom: 14px; }
-  .review-quote { font-size: 15px; color: var(--ink); margin-bottom: 18px; }
-  .review-name { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-  .reviews-empty { text-align: center; color: var(--muted); font-size: 15px; padding: 20px 0; }
-
-  .mid-cta {
-    background: var(--bamboo); padding: 56px 32px; text-align: center;
-  }
-  .mid-cta h3 { color: var(--paper); font-size: clamp(24px, 4vw, 34px); margin-bottom: 22px; }
 
   footer {
     background: var(--ink); color: rgba(246,244,236,0.5);
     padding: 24px 32px; text-align: center; font-size: 13px;
-    border-top: 1px solid rgba(246,244,236,0.12);
   }
 </style>
 </head>
@@ -232,212 +156,65 @@
 
 <header>
   <div class="nav-inner">
-    <div class="logo display">Bamboo<span class="dot">.</span>Blacktop</div>
-    <div class="nav-links">
-      <nav>
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Area</a></li>
-        </ul>
-      </nav>
-      <a href="#contact" class="nav-cta">Get a quote</a>
-    </div>
+    <a href="index.html" class="logo display">Bamboo<span class="dot">.</span>Blacktop</a>
+    <a href="index.html" class="back-link">&larr; Back to site</a>
   </div>
 </header>
 
-<section class="hero">
-  <svg class="stalks" viewBox="0 0 400 700" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#6E9464" stroke-width="3" fill="none" opacity="0.7">
-      <line x1="60" y1="0" x2="60" y2="700"/>
-      <line x1="150" y1="0" x2="150" y2="700"/>
-      <line x1="240" y1="0" x2="240" y2="700"/>
-      <line x1="330" y1="0" x2="330" y2="700"/>
-    </g>
-    <g stroke="#DFA83A" stroke-width="6">
-      <line x1="30" y1="120" x2="90" y2="120"/>
-      <line x1="30" y1="260" x2="90" y2="260"/>
-      <line x1="30" y1="400" x2="90" y2="400"/>
-      <line x1="30" y1="540" x2="90" y2="540"/>
-      <line x1="120" y1="60" x2="180" y2="60"/>
-      <line x1="120" y1="220" x2="180" y2="220"/>
-      <line x1="120" y1="380" x2="180" y2="380"/>
-      <line x1="120" y1="540" x2="180" y2="540"/>
-      <line x1="210" y1="150" x2="270" y2="150"/>
-      <line x1="210" y1="310" x2="270" y2="310"/>
-      <line x1="210" y1="470" x2="270" y2="470"/>
-      <line x1="300" y1="90" x2="360" y2="90"/>
-      <line x1="300" y1="250" x2="360" y2="250"/>
-      <line x1="300" y1="410" x2="360" y2="410"/>
-      <line x1="300" y1="570" x2="360" y2="570"/>
-    </g>
-  </svg>
-  <div class="hero-inner">
-    <div class="eyebrow">Taber & area, Alberta</div>
-    <h1>Bends without<br>breaking. <span class="accent">Sealed</span><br>to last.</h1>
-    <p class="hero-sub">Seal coating, crack filling, and full driveway or parking lot service — built for prairie freeze-thaw, not just summer weather.</p>
-    <svg class="hero-line" viewBox="0 0 460 10" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="5" x2="460" y2="5" stroke="#DFA83A" stroke-width="4" stroke-dasharray="30 14"/>
-    </svg>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Request a free quote</a>
-      <a href="#services" class="btn-ghost">See services</a>
-    </div>
-  </div>
-</section>
+<main>
+  <div class="form-wrap">
 
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">What we do</div>
-      <h2>Four services. One crew.</h2>
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-num mono">01 / Seal coating</div>
-        <h3>Seal coating</h3>
-        <p>A protective layer that shields asphalt from UV, oil, and water so it doesn't dry out, crack, or crumble as fast.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num mono">02 / Crack filling</div>
-        <h3>Crack filling</h3>
-        <p>Small cracks let water in, and water is what actually destroys pavement over an Alberta winter. We fill them before they spread.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num mono">03 / Full service</div>
-        <h3>Driveway & lot care</h3>
-        <p>From a single home driveway to a full commercial lot — cleaning, prep, and sealing handled start to finish.</p>
-      </div>
-      <div class="service-card teaser">
-        <div class="service-num mono">+ / Add-ons</div>
-        <h3>Need something else?</h3>
-        <p>Snow removal, window cleaning, lawn cutting, car cleaning, and junk removal are all available on request.</p>
-        <a href="#extras">See add-on services →</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <div id="review-form-section">
+      <div class="eyebrow">Tell us how it went</div>
+      <h1>Leave a review</h1>
+      <p class="subtext">Had work done by Bamboo Blacktop? We'd love to hear about it. Your review is checked before it goes live on the site.</p>
 
-<section class="why">
-  <div class="why-inner">
-    <div>
-      <div class="eyebrow">Why Bamboo</div>
-      <h2>Bamboo bends. Blacktop shouldn't have to.</h2>
-      <p>Asphalt that's left unsealed goes brittle fast — one hard freeze-thaw cycle and small cracks turn into potholes. A quality seal coat keeps the surface flexible enough to handle Alberta's swings, so it lasts longer instead of fighting the season.</p>
-    </div>
-    <div class="why-stats">
-      <div class="why-stat"><span class="num">2×</span><span class="lbl">longer surface life with regular seal coating</span></div>
-      <div class="why-stat"><span class="num">24–48h</span><span class="lbl">typical cure time before the lot reopens</span></div>
-      <div class="why-stat"><span class="num">1 crew</span><span class="lbl">start to finish, no subcontracted steps</span></div>
-    </div>
-  </div>
-</section>
+      <div id="form-message" class="form-message"></div>
 
-<section class="reviews" id="reviews">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Word of mouth</div>
-      <h2>What customers say</h2>
-    </div>
-    <div class="review-invite">
-      <p>Had work done by Bamboo Blacktop? We'd love to hear how it went.</p>
-      <a href="review.html" class="btn-primary">Leave us a review</a>
-    </div>
-    <div class="reviews-grid" id="reviews-grid"></div>
-    <p class="reviews-empty" id="reviews-empty" style="display:none;">No reviews yet — be the first to leave one!</p>
-  </div>
-</section>
+      <form id="review-form" novalidate>
 
-<section class="process" id="process">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">How it goes</div>
-      <h2>The process, in order</h2>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <h3>Assess & clean</h3>
-        <p>We walk the surface, note problem spots, and clear dirt, oil, and debris so the seal coat actually bonds.</p>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <h3>Crack fill</h3>
-        <p>Existing cracks get filled first — sealing over them without fixing them just hides the problem.</p>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <h3>Seal coat</h3>
-        <p>An even, full-surface application that protects against UV, oil, and water going forward.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div>
+          <label for="name">Your name <span class="optional-tag">(required)</span></label>
+          <input type="text" id="name" name="name" maxlength="80">
+          <div class="field-error" id="name-error">Please enter your name.</div>
+        </div>
 
-<section class="mid-cta">
-  <h3>Ready to protect your driveway or lot?</h3>
-  <a href="#contact" class="btn-primary">Request a free quote</a>
-</section>
+        <div>
+          <label for="city">City <span class="optional-tag">(optional)</span></label>
+          <input type="text" id="city" name="city" maxlength="80" placeholder="e.g. Taber, AB">
+        </div>
 
-<section class="extras" id="extras">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Add-ons</div>
-      <h2>Extra services on request</h2>
-      <p>Ask about adding any of these to your job — no pressure, just an option. Book any add-on together with a sealcoat job and save 15%.</p>
-    </div>
-    <div class="extras-grid">
-      <div class="extra-item">
-        <span class="mono">Add-on</span>
-        <h3>Snow removal</h3>
-        <span class="save">Save 15% bundled</span>
-      </div>
-      <div class="extra-item">
-        <span class="mono">Add-on</span>
-        <h3>Window cleaning</h3>
-        <span class="save">Save 15% bundled</span>
-      </div>
-      <div class="extra-item">
-        <span class="mono">Add-on</span>
-        <h3>Lawn cutting</h3>
-        <span class="save">Save 15% bundled</span>
-      </div>
-      <div class="extra-item">
-        <span class="mono">Add-on</span>
-        <h3>Car cleaning</h3>
-        <span class="save">Save 15% bundled</span>
-      </div>
-      <div class="extra-item">
-        <span class="mono">Add-on</span>
-        <h3>Junk removal</h3>
-        <span class="save">Save 15% bundled</span>
-      </div>
-    </div>
-    <p class="extras-note">Mention what you need when you request your quote and we'll price it in.</p>
-  </div>
-</section>
+        <div>
+          <label for="rating">Rating <span class="optional-tag">(required)</span></label>
+          <div class="star-picker" id="star-picker">
+            <button type="button" data-value="1" aria-label="1 star">★</button>
+            <button type="button" data-value="2" aria-label="2 stars">★</button>
+            <button type="button" data-value="3" aria-label="3 stars">★</button>
+            <button type="button" data-value="4" aria-label="4 stars">★</button>
+            <button type="button" data-value="5" aria-label="5 stars">★</button>
+          </div>
+          <input type="hidden" id="rating" name="rating" value="0">
+          <div class="field-error" id="rating-error">Please choose a star rating.</div>
+        </div>
 
-<section class="contact" id="contact">
-  <div class="eyebrow">Get in touch</div>
-  <h2>Get a free quote on your driveway or lot</h2>
-  <p class="sub">Tell us the size of the job and we'll get back to you with pricing — no obligation.</p>
-  <a href="#" class="btn-primary">Request a free quote</a>
-  <div class="contact-details">
-    <div class="cd-item">
-      <div class="cd-label mono">Phone</div>
-      <div class="cd-value">(587) 257-9362</div>
+        <div>
+          <label for="review">Your review <span class="optional-tag">(required)</span></label>
+          <textarea id="review" name="review" maxlength="1000" placeholder="Tell us about the job..."></textarea>
+          <div class="field-error" id="review-error">Please write a short review.</div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submit-btn">Submit review</button>
+      </form>
     </div>
-    <div class="cd-item">
-      <div class="cd-label mono">Email</div>
-      <div class="cd-value">bambooblacktop@gmail.com</div>
+
+    <div class="thank-you" id="thank-you">
+      <h2>Thank you!</h2>
+      <p>Your review has been submitted and will appear on the site once it's been checked.</p>
+      <a href="index.html">Back to the homepage</a>
     </div>
-    <div class="cd-item">
-      <div class="cd-label mono">Service area</div>
-      <div class="cd-value">Taber & surrounding area, AB</div>
-    </div>
+
   </div>
-</section>
+</main>
 
 <footer>
   Bamboo Blacktop — Seal coating & crack filling in Taber, Alberta.
@@ -449,51 +226,109 @@
 <script src="config.js"></script>
 
 <script>
-  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const form = document.getElementById('review-form');
+  const formSection = document.getElementById('review-form-section');
+  const thankYou = document.getElementById('thank-you');
+  const formMessage = document.getElementById('form-message');
+  const submitBtn = document.getElementById('submit-btn');
 
-  async function loadReviews() {
-    const grid = document.getElementById('reviews-grid');
-    const emptyMessage = document.getElementById('reviews-empty');
+  const nameInput = document.getElementById('name');
+  const cityInput = document.getElementById('city');
+  const ratingInput = document.getElementById('rating');
+  const reviewInput = document.getElementById('review');
 
-    const { data, error } = await supabaseClient
-      .from('reviews')
-      .select('*')
-      .eq('approved', true)
-      .order('created_at', { ascending: false });
+  const nameError = document.getElementById('name-error');
+  const ratingError = document.getElementById('rating-error');
+  const reviewError = document.getElementById('review-error');
 
-    if (error) {
-      console.error('Error loading reviews:', error);
-      return;
-    }
+  const starButtons = document.querySelectorAll('#star-picker button');
 
-    if (!data || data.length === 0) {
-      emptyMessage.style.display = 'block';
-      return;
-    }
+  starButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const value = parseInt(button.getAttribute('data-value'), 10);
+      ratingInput.value = value;
 
-    function starString(rating) {
-      const filled = '★'.repeat(rating);
-      const empty = '☆'.repeat(5 - rating);
-      return filled + empty;
-    }
-
-    data.forEach((review) => {
-      const card = document.createElement('div');
-      card.className = 'review-card';
-
-      const location = review.city ? `— ${review.name}, ${review.city}` : `— ${review.name}`;
-
-      card.innerHTML = `
-        <div class="review-stars">${starString(review.rating)}</div>
-        <p class="review-quote">"${review.review}"</p>
-        <div class="review-name">${location}</div>
-      `;
-
-      grid.appendChild(card);
+      starButtons.forEach((b) => {
+        const bValue = parseInt(b.getAttribute('data-value'), 10);
+        b.classList.toggle('active', bValue <= value);
+      });
     });
+  });
+
+  let supabaseClient = null;
+  try {
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  } catch (err) {
+    console.error('Supabase client setup failed:', err);
+    formMessage.textContent = 'This form is not fully set up yet (Supabase connection missing). The form still works below, but submitting will not save anywhere until this is fixed.';
+    formMessage.classList.add('error');
   }
 
-  loadReviews();
+  function validateForm() {
+    let isValid = true;
+
+    nameError.classList.remove('show');
+    ratingError.classList.remove('show');
+    reviewError.classList.remove('show');
+
+    if (nameInput.value.trim() === '') {
+      nameError.classList.add('show');
+      isValid = false;
+    }
+
+    if (parseInt(ratingInput.value, 10) < 1) {
+      ratingError.classList.add('show');
+      isValid = false;
+    }
+
+    if (reviewInput.value.trim() === '') {
+      reviewError.classList.add('show');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    formMessage.classList.remove('error');
+    formMessage.textContent = '';
+
+    if (!validateForm()) {
+      return;
+    }
+
+    if (!supabaseClient) {
+      formMessage.textContent = 'This form is not connected to Supabase yet, so the review cannot be saved. Please check config.js.';
+      formMessage.classList.add('error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    const { error } = await supabaseClient
+      .from('reviews')
+      .insert([{
+        name: nameInput.value.trim(),
+        city: cityInput.value.trim() || null,
+        rating: parseInt(ratingInput.value, 10),
+        review: reviewInput.value.trim(),
+        approved: false
+      }]);
+
+    if (error) {
+      formMessage.textContent = 'Sorry, something went wrong submitting your review. Please try again.';
+      formMessage.classList.add('error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit review';
+      console.error('Supabase insert error:', error);
+      return;
+    }
+
+    formSection.style.display = 'none';
+    thankYou.classList.add('show');
+  });
 </script>
 
 </body>
