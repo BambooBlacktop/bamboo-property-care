@@ -221,38 +221,6 @@
   }
   .mid-cta h3 { color: var(--paper); font-size: clamp(24px, 4vw, 34px); margin-bottom: 22px; }
 
-  .quote-overlay {
-    display: none;
-    position: fixed; inset: 0; z-index: 100;
-    background: rgba(27,27,24,0.55);
-    align-items: center; justify-content: center;
-    padding: 24px;
-  }
-  .quote-overlay.show { display: flex; }
-  .quote-modal {
-    background: var(--paper);
-    max-width: 460px; width: 100%;
-    padding: 44px 36px;
-    position: relative;
-    border-top: 6px solid var(--line-yellow);
-  }
-  .quote-close {
-    position: absolute; top: 16px; right: 18px;
-    background: none; border: none; cursor: pointer;
-    font-size: 22px; color: var(--muted); line-height: 1;
-    padding: 4px;
-  }
-  .quote-close:hover { color: var(--ink); }
-  .quote-modal .eyebrow { color: var(--bamboo); margin-bottom: 14px; }
-  .quote-modal h2 {
-    font-family: 'Big Shoulders Display', sans-serif; text-transform: uppercase;
-    font-size: 30px; color: var(--ink); margin-bottom: 16px; line-height: 1.05;
-  }
-  .quote-modal p { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
-  .quote-modal .btn-primary { width: 100%; text-align: center; display: block; }
-  .quote-alt { margin-top: 18px; font-size: 14px; color: var(--muted); text-align: center; }
-  .quote-alt a { color: var(--bamboo); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-
   footer {
     background: var(--ink); color: rgba(246,244,236,0.5);
     padding: 24px 32px; text-align: center; font-size: 13px;
@@ -274,7 +242,7 @@
           <li><a href="#contact">Area</a></li>
         </ul>
       </nav>
-      <a href="#" class="nav-cta" onclick="openQuoteModal(event)">Get a quote</a>
+      <a href="quote.html" class="nav-cta">Get a quote</a>
     </div>
   </div>
 </header>
@@ -313,7 +281,7 @@
       <line x1="0" y1="5" x2="460" y2="5" stroke="#DFA83A" stroke-width="4" stroke-dasharray="30 14"/>
     </svg>
     <div class="hero-actions">
-      <a href="#" class="btn-primary" onclick="openQuoteModal(event)">Request a free quote</a>
+      <a href="quote.html" class="btn-primary">Request a free quote</a>
       <a href="#services" class="btn-ghost">See services</a>
     </div>
   </div>
@@ -409,7 +377,7 @@
 
 <section class="mid-cta">
   <h3>Ready to protect your driveway or lot?</h3>
-  <a href="#" class="btn-primary" onclick="openQuoteModal(event)">Request a free quote</a>
+  <a href="quote.html" class="btn-primary">Request a free quote</a>
 </section>
 
 <section class="extras" id="extras">
@@ -454,7 +422,7 @@
   <div class="eyebrow">Get in touch</div>
   <h2>Get a free quote on your driveway or lot</h2>
   <p class="sub">Tell us the size of the job and we'll get back to you with pricing — no obligation.</p>
-  <a href="#" class="btn-primary" onclick="openQuoteModal(event)">Request a free quote</a>
+  <a href="quote.html" class="btn-primary">Request a free quote</a>
   <div class="contact-details">
     <div class="cd-item">
       <div class="cd-label mono">Phone</div>
@@ -475,50 +443,10 @@
   Bamboo Blacktop — Seal coating & crack filling in Taber, Alberta.
 </footer>
 
-<!-- ===== Quote request modal ===== -->
-<div class="quote-overlay" id="quote-overlay">
-  <div class="quote-modal">
-    <button class="quote-close" id="quote-close" aria-label="Close">&times;</button>
-    <div class="eyebrow mono">Get in touch</div>
-    <h2>Get Your Free Quote Today</h2>
-    <p>The fastest way to receive an estimate is to text us a few photos of your driveway along with your address. We'll review them and get back to you as quickly as possible.</p>
-    <a href="sms:5872579362" class="btn-primary">Text us photos: (587) 257-9362</a>
-    <div class="quote-alt">Prefer email? <a href="mailto:bambooblacktop@gmail.com">bambooblacktop@gmail.com</a></div>
-  </div>
-</div>
-
 <!-- Supabase JS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!-- Project credentials (URL + public anon key) -->
 <script src="config.js"></script>
-
-<script>
-  const quoteOverlay = document.getElementById('quote-overlay');
-  const quoteClose = document.getElementById('quote-close');
-
-  function openQuoteModal(event) {
-    event.preventDefault();
-    quoteOverlay.classList.add('show');
-  }
-
-  function closeQuoteModal() {
-    quoteOverlay.classList.remove('show');
-  }
-
-  quoteClose.addEventListener('click', closeQuoteModal);
-
-  quoteOverlay.addEventListener('click', (event) => {
-    if (event.target === quoteOverlay) {
-      closeQuoteModal();
-    }
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeQuoteModal();
-    }
-  });
-</script>
 
 <script>
   const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
