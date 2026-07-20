@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bamboo Blacktop | Pavement & Property Maintenance</title>
+<title>Bamboo Property Care | Driveway Cleaning & Property Maintenance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -50,8 +50,9 @@
   .nav-inner {
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 32px; max-width: 1100px; margin: 0 auto;
+    gap: 16px; flex-wrap: wrap;
   }
-  .logo { font-size: 22px; display: flex; align-items: baseline; gap: 8px; }
+  .logo { font-size: 20px; display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
   .logo span.dot { color: var(--bamboo); }
   nav ul { list-style: none; display: flex; gap: 32px; }
   nav a { font-size: 14px; font-weight: 500; color: var(--muted); }
@@ -87,7 +88,7 @@
   }
   .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--bamboo-light); }
   .hero h1 {
-    font-size: clamp(48px, 8vw, 96px);
+    font-size: clamp(44px, 7.5vw, 88px);
     color: var(--paper);
   }
   .hero h1 .accent { color: var(--bamboo-light); }
@@ -148,12 +149,6 @@
   }
   .service-card.teaser h3 { color: var(--bamboo); }
   .service-card.teaser a { color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
-  .surface-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--tan); margin: 44px 0 14px;
-  }
-  .surface-label:first-of-type { margin-top: 0; }
 
   .why { background: var(--bamboo); color: var(--bamboo-pale); padding: 100px 32px; }
   .why-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
@@ -238,7 +233,7 @@
 
 <header>
   <div class="nav-inner">
-    <div class="logo display">Bamboo<span class="dot">.</span>Blacktop</div>
+    <div class="logo display">Bamboo<span class="dot">.</span>Property Care</div>
     <div class="nav-links">
       <nav>
         <ul>
@@ -281,8 +276,8 @@
   </svg>
   <div class="hero-inner">
     <div class="eyebrow">Taber & area, Alberta</div>
-    <h1>Pavement & Property<br><span class="accent">Maintenance</span>,<br>done right.</h1>
-    <p class="hero-sub">Asphalt and concrete driveway care — sealing, crack repair, and full property maintenance built for prairie freeze-thaw, not just summer weather.</p>
+    <h1>Driveway cleaning<br>& <span class="accent">property care</span>,<br>done right.</h1>
+    <p class="hero-sub">Power washing, weed removal, and crack resealing — plus lawn care, window cleaning, and property upkeep, built for every Taber season.</p>
     <svg class="hero-line" viewBox="0 0 460 10" xmlns="http://www.w3.org/2000/svg">
       <line x1="0" y1="5" x2="460" y2="5" stroke="#DFA83A" stroke-width="4" stroke-dasharray="30 14"/>
     </svg>
@@ -297,43 +292,23 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">What we do</div>
-      <h2>Pavement & property care. One crew.</h2>
+      <h2>Driveway & property care. One crew.</h2>
     </div>
-
-    <div class="surface-label">Asphalt</div>
     <div class="service-grid">
       <div class="service-card">
-        <div class="service-num mono">01 / Seal coating</div>
-        <h3>Seal coating</h3>
-        <p>A protective layer that shields asphalt from UV, oil, and water so it doesn't dry out, crack, or crumble as fast.</p>
+        <div class="service-num mono">01 / Power washing</div>
+        <h3>Driveway power washing</h3>
+        <p>Removes dirt, oil stains, and built-up grime, restoring your driveway's look in a single visit.</p>
       </div>
       <div class="service-card">
-        <div class="service-num mono">02 / Crack filling</div>
-        <h3>Crack filling</h3>
-        <p>Small cracks let water in, and water is what actually destroys asphalt over an Alberta winter. We fill them before they spread.</p>
-      </div>
-    </div>
-
-    <div class="surface-label">Concrete</div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-num mono">03 / Concrete sealing</div>
-        <h3>Concrete sealing</h3>
-        <p>Sealing protects concrete from moisture, staining, and the freeze-thaw cycles that cause pitting and surface damage over time.</p>
+        <div class="service-num mono">02 / Weed removal</div>
+        <h3>Weed removal</h3>
+        <p>Clears weeds growing in cracks and joints before they spread further and cause more damage.</p>
       </div>
       <div class="service-card">
-        <div class="service-num mono">04 / Crack & joint repair</div>
-        <h3>Crack & joint repair</h3>
-        <p>Cracks and worn joints let water in and get worse every winter. We repair them before they turn into a bigger problem.</p>
-      </div>
-    </div>
-
-    <div class="surface-label">Property care</div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-num mono">05 / Full service</div>
-        <h3>Driveway & lot care</h3>
-        <p>From a single home driveway to a full commercial lot — cleaning, prep, and sealing handled start to finish, asphalt or concrete.</p>
+        <div class="service-num mono">03 / Crack resealing</div>
+        <h3>Crack resealing</h3>
+        <p>Seals cracks after weed removal to keep them from coming back and to stop water from getting in.</p>
       </div>
       <div class="service-card teaser">
         <div class="service-num mono">+ / Add-ons</div>
@@ -342,7 +317,6 @@
         <a href="#extras">See add-on services →</a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -350,12 +324,12 @@
   <div class="why-inner">
     <div>
       <div class="eyebrow">Why Bamboo</div>
-      <h2>Bamboo bends. Your pavement shouldn't have to.</h2>
-      <p>Left unsealed, both asphalt and concrete take a beating from Alberta's freeze-thaw swings — moisture gets in, cracks spread, and small problems turn into expensive ones. Regular sealing and crack repair protects whatever your driveway or lot is made of, so it lasts longer instead of fighting the season.</p>
+      <h2>Weeds and neglect wreck curb appeal fast.</h2>
+      <p>Left alone, weeds force cracks wider every season, dirt and stains set in permanently, and small cracks let water in that makes freeze-thaw damage worse. Regular cleaning, weed removal, and crack sealing keeps your driveway looking good and lasting longer.</p>
     </div>
     <div class="why-stats">
-      <div class="why-stat"><span class="num">2×</span><span class="lbl">longer surface life with regular sealing</span></div>
-      <div class="why-stat"><span class="num">24–48h</span><span class="lbl">typical cure time before the lot reopens</span></div>
+      <div class="why-stat"><span class="num">Same-day</span><span class="lbl">visible difference after one clean</span></div>
+      <div class="why-stat"><span class="num">2x/yr</span><span class="lbl">recommended cleaning to stay ahead of weeds</span></div>
       <div class="why-stat"><span class="num">1 crew</span><span class="lbl">start to finish, no subcontracted steps</span></div>
     </div>
   </div>
@@ -368,7 +342,7 @@
       <h2>What customers say</h2>
     </div>
     <div class="review-invite">
-      <p>Had work done by Bamboo Blacktop? We'd love to hear how it went.</p>
+      <p>Had work done by Bamboo Property Care? We'd love to hear how it went.</p>
       <a href="review.html" class="btn-primary">Leave us a review</a>
     </div>
     <div class="reviews-grid" id="reviews-grid"></div>
@@ -386,24 +360,24 @@
       <div class="step">
         <span class="step-num">01</span>
         <h3>Assess & clean</h3>
-        <p>We walk the surface, note problem spots, and clear dirt, oil, and debris so the sealant actually bonds.</p>
+        <p>We walk the property, note weed and crack trouble spots, then power wash the surface to clear dirt and grime.</p>
       </div>
       <div class="step">
         <span class="step-num">02</span>
-        <h3>Crack fill</h3>
-        <p>Existing cracks get filled first — sealing over them without fixing them just hides the problem.</p>
+        <h3>Remove weeds</h3>
+        <p>Weeds get cleared from cracks and joints — sealing over them without removing them just means they push back through.</p>
       </div>
       <div class="step">
         <span class="step-num">03</span>
-        <h3>Seal</h3>
-        <p>An even, full-surface application that protects against UV, oil, and water going forward.</p>
+        <h3>Reseal cracks</h3>
+        <p>Once cleared, cracks get sealed to block water and keep weeds from coming back.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="mid-cta">
-  <h3>Ready to protect your driveway or lot?</h3>
+  <h3>Ready to bring your driveway back to life?</h3>
   <a href="quote.html" class="btn-primary">Request a free quote</a>
 </section>
 
@@ -412,7 +386,7 @@
     <div class="section-head">
       <div class="eyebrow">Add-ons</div>
       <h2>Extra services on request</h2>
-      <p>Ask about adding any of these to your job — no pressure, just an option. Book any add-on together with a sealcoat job and save 15%.</p>
+      <p>Ask about adding any of these to your job — no pressure, just an option. Book any add-on together with a core service and save 15%.</p>
     </div>
     <div class="extras-grid">
       <div class="extra-item">
@@ -447,8 +421,8 @@
 
 <section class="contact" id="contact">
   <div class="eyebrow">Get in touch</div>
-  <h2>Get a free quote on your driveway or lot</h2>
-  <p class="sub">Tell us the size of the job and we'll get back to you with pricing — no obligation.</p>
+  <h2>Get a free quote on your driveway or property</h2>
+  <p class="sub">Tell us what you need and we'll get back to you with pricing — no obligation.</p>
   <a href="quote.html" class="btn-primary">Request a free quote</a>
   <div class="contact-details">
     <div class="cd-item">
@@ -467,7 +441,7 @@
 </section>
 
 <footer>
-  Bamboo Blacktop — Pavement & property maintenance in Taber, Alberta.
+  Bamboo Property Care — Driveway cleaning & property maintenance in Taber, Alberta.
 </footer>
 
 <!-- Supabase JS SDK -->
