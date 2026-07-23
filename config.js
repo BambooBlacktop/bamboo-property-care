@@ -10,7 +10,7 @@ const SUPABASE_URL = "https://lgmwhoryndpytnbmlpnm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_3gO0yPueHtO-K4wFDTqzjw_tyDAN8Pf";
 
 // ============================================================
-// 
+// EmailJS configuration
 // ============================================================
 // Used to send an instant email notification whenever a new
 // quote request is submitted, so it doesn't require manually
