@@ -20,3 +20,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_3gO0yPueHtO-K4wFDTqzjw_tyDAN8Pf";
 const EMAILJS_PUBLIC_KEY = "7smDmCwl0zoGdKabM";
 const EMAILJS_SERVICE_ID = "service_f21xr8q";
 const EMAILJS_TEMPLATE_ID = "template_kyxmbes";
+
+// Second EmailJS template — sends an acknowledgment TO the customer
+// (separate from EMAILJS_TEMPLATE_ID, which notifies the business owner)
+const EMAILJS_CUSTOMER_TEMPLATE_ID = "template_e3je9nz";
