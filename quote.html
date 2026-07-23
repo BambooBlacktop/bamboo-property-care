@@ -268,10 +268,15 @@
 
 <!-- Supabase JS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<!-- Project credentials (URL + public anon key) -->
+<!-- EmailJS SDK (sends an instant notification email on new quote requests) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Project credentials (URL + public anon key + EmailJS keys) -->
 <script src="config.js"></script>
 
 <script>
+  // Initialize EmailJS with the public key from config.js
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
   const form = document.getElementById('quote-form');
   const formSection = document.getElementById('quote-form-section');
   const thankYou = document.getElementById('thank-you');
@@ -420,6 +425,30 @@
       submitBtn.textContent = 'Submit';
       console.error('Supabase insert error:', error);
       return;
+    }
+
+    // ============================================================
+    // Send an instant notification email so a new quote request
+    // doesn't require manually checking Supabase. This runs AFTER
+    // the quote is safely saved, and any failure here is only
+    // logged (not shown to the customer) — the quote itself is
+    // already saved either way.
+    // ============================================================
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: nameInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        email: emailInput.value.trim() || 'Not provided',
+        address: addressInput.value.trim(),
+        services: services,
+        driveway_size: size,
+        crack_length: document.getElementById('crack_length').value.trim() || 'Not provided',
+        timeline: timelineInput.value.trim() || 'Not specified',
+        photo_urls: photoUrls || 'None uploaded'
+      });
+    } catch (emailErr) {
+      console.error('EmailJS notification failed:', emailErr);
+      // Not shown to the customer — the quote is already saved in Supabase either way.
     }
 
     formSection.style.display = 'none';
