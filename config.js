@@ -1,5 +1,5 @@
 // ============================================================
-// Supabase configuration for Bamboo Blacktop
+// Supabase configuration for Bamboo Property Care
 // ============================================================
 // These are the live project credentials.
 // SUPABASE_URL       -> Project URL
@@ -7,4 +7,16 @@
 // ============================================================
 
 const SUPABASE_URL = "https://lgmwhoryndpytnbmlpnm.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnbXdob3J5bmRweXRuYm1scG5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyNjM3MjYsImV4cCI6MjA5OTgzOTcyNn0.hzPeTF-KMEkxbPqXVgs2EEkM2_FHcvBlyEW78FtbXY0";
+const SUPABASE_ANON_KEY = "sb_publishable_3gO0yPueHtO-K4wFDTqzjw_tyDAN8Pf";
+
+// ============================================================
+// EmailJS configuration
+// ============================================================
+// Used to send an instant email notification whenever a new
+// quote request is submitted, so it doesn't require manually
+// checking Supabase.
+// ============================================================
+
+const EMAILJS_PUBLIC_KEY = "7smDmCwl0zoGdKabM";
+const EMAILJS_SERVICE_ID = "service_f21xr8q";
+const EMAILJS_TEMPLATE_ID = "template_kyxmbes";
